@@ -1,5 +1,13 @@
 'use strict';
 
 function createUpdatedCollection(collectionA, objectB) {
-  return '实现练习要求，并改写该行代码。';
+  var bArr = objectB['value'];
+  collectionA.forEach(function(obj) {
+    bArr.forEach(function(item) {
+      if(obj['key'] === item) {
+        obj['count'] < 3? obj['count']--: obj['count']-= (Math.floor(obj['count'] / 3));
+      }
+    });
+  });
+  return collectionA;
 }
